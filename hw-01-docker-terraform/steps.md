@@ -82,4 +82,15 @@ and tip_amount = (
 ```
 
 
-## Q7 - 
+## Q7 - Terraform Workflow
+
+First, create the files `terraform-create/main.tf` and `terraform-create/data.tf`
+```
+terraform init
+terraform apply -auto-approve
+```
+
+After everything is done and tested, delete all resources
+```
+terraform destroy
+```
