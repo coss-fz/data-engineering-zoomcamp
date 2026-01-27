@@ -42,7 +42,7 @@ and trip_distance <= 1;
 ## Q4 - Which was the pick up day with the longest trip distance? Only consider trips with trip_distance less than 100 miles (to exclude data errors).
 
 ```
-select date(lpep_pickup_datetime) - 2025-11-14
+select date(lpep_pickup_datetime) -- 2025-11-14
 from green_taxi_data
 where 1=1
 and trip_distance = (
