@@ -1,7 +1,7 @@
 ## Q1 - Run docker with the python:3.13 image. Use an entrypoint bash to interact with the container.
 
 First, I have to run the docker image
-```
+```bash
 docker run -it \
     --rm \
     --entrypoint=bash \
@@ -9,7 +9,7 @@ docker run -it \
 ```
 
 Then, I have to check the pip verion
-```
+```bash
 pip --version   # pip 25.3
 ```
 
@@ -17,7 +17,7 @@ pip --version   # pip 25.3
 ## Q2 - Given the following docker-compose.yaml, what is the hostname and port that pgadmin should use to connect to the postgres database?
 
 First, I have to create the container
-```
+```bash
 docker-compose up -d
 ```
 
@@ -30,7 +30,7 @@ Then, I have to create the connection in `pgAdmin`:
 
 ## Q3 - For the trips in November 2025 (lpep_pickup_datetime between '2025-11-01' and '2025-12-01', exclusive of the upper bound), how many trips had a trip_distance of less than or equal to 1 mile?
 
-```
+```sql
 select count(*) -- 8007
 from green_taxi_data
 where 1=1
@@ -41,7 +41,7 @@ and trip_distance <= 1;
 
 ## Q4 - Which was the pick up day with the longest trip distance? Only consider trips with trip_distance less than 100 miles (to exclude data errors).
 
-```
+```sql
 select date(lpep_pickup_datetime) -- 2025-11-14
 from green_taxi_data
 where 1=1
@@ -54,7 +54,7 @@ and trip_distance = (
 
 ## Q5 - Which was the pickup zone with the largest total_amount (sum of all trips) on November 18th, 2025?
 
-```
+```sql
 select "PULocationID", "Zone", count(*) -- East Harlem North
 from green_taxi_data g
 left join zones z on g."PULocationID" = z."LocationID"
@@ -68,7 +68,7 @@ limit 1;
 
 ## Q6 - For the passengers picked up in the zone named "East Harlem North" in November 2025, which was the drop off zone that had the largest tip?
 
-```
+```sql
 select "DOLocationID", "Zone" -- Yorkville West
 from green_taxi_data g
 left join zones z on g."DOLocationID" = z."LocationID"
@@ -85,12 +85,12 @@ and tip_amount = (
 ## Q7 - Terraform Workflow
 
 First, create the files `terraform-create/main.tf` and `terraform-create/data.tf`
-```
+```bash
 terraform init
 terraform apply -auto-approve
 ```
 
 After everything is done and tested, delete all resources
-```
+```bashs
 terraform destroy
 ```
