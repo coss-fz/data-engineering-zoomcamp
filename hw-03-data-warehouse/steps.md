@@ -85,4 +85,4 @@ False, only for tables greater than 1 GB.
 
 ## Q9 - Write a `SELECT count(*)` query FROM the materialized table you created. How many bytes does it estimate will be read? Why?
 
-The estimated processing is **0 B**, this is because BigQuery is reading from metadata (*Number of rows*), not the actual data files
+The estimated processing is **0 B**, this is because BigQuery is reading from metadata (*Number of rows*), not the actual data files.
