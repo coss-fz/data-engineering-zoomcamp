@@ -10,7 +10,7 @@ I just had to look for the label `file` in the backfill execution for the `green
 
 ## Q3 - How many rows are there for the Yellow Taxi data for all CSV files in the year 2020?
 
-```
+```sql
 select count(*) from zoomcamp.yellow_tripdata -- 24648499
 where filename like 'yellow_tripdata_2020%';
 ```
@@ -18,7 +18,7 @@ where filename like 'yellow_tripdata_2020%';
 
 ## Q4 - How many rows are there for the Green Taxi data for all CSV files in the year 2020?
 
-```
+```sql
 select count(*) from zoomcamp.green_tripdata -- 1734051
 where filename like 'green_tripdata_2020%';
 ```
@@ -26,7 +26,7 @@ where filename like 'green_tripdata_2020%';
 
 ## Q5 - How many rows are there for the Yellow Taxi data for the March 2021 CSV file?
 
-```
+```sql
 select count(*) from zoomcamp.yellow_tripdata -- 1925152
 where filename = 'yellow_tripdata_2021-03.csv';
 ```
